@@ -13,8 +13,8 @@ stdenvNoCC.mkDerivation rec {
   src = fetchFromGitHub { 
     owner = "Bqrry4";
     repo = "sddm-stray";
-    rev = "0dfb0c59b16a985df2cc0b77a08fa9fb5c484c46";
-    hash = "sha256-/vvD9ccFyPhoR0oUTHHR+kBh7BezbfmKKOupjEr6mGk=";
+    rev = "299b6d6473fa1880ae94b12233f9233b0e4dbf02";
+    hash = "sha256-g/K0Ep0NkSDl4SdGHoqqZydGR6F8GoqYggz37rp8Oc8=";
   };
 
   dontWrapQtApps = true;

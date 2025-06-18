@@ -8,6 +8,8 @@
 
 # Installation
 
+## Manual
+
 ### Dependencies
 
 - [`sddm >= 0.21.0`](https://github.com/sddm/sddm)
@@ -31,6 +33,7 @@ Current=stray
 #...
 ```
 
+## Nix
 Add to `inputs` in `flake.nix`:
 
 ```nix
@@ -42,13 +45,10 @@ sddm-stray.url = "github:Bqrry4/sddm-stray";
 Usage with a minimal system flake:
 
 ```nix
-
 {
-
   environment.systemPackages = [ 
       inputs.sddm-stray.packages.${pkgs.system}.default
-    ]; 
-
+  ]; 
  
    services.displayManager.sddm = {
       enable = true; # Enable SDDM.
