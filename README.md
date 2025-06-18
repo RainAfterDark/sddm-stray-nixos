@@ -46,9 +46,6 @@ Usage with a minimal system flake:
 {
 
   environment.systemPackages = [ 
-   #   sddm-stray
-      pkgs.lyra-cursors
-      inputs.hyprddm.packages.${pkgs.system}.default
       inputs.sddm-stray.packages.${pkgs.system}.default
     ]; 
 
@@ -59,16 +56,9 @@ Usage with a minimal system flake:
       extraPackages = with pkgs; [
         kdePackages.qtsvg
         kdePackages.qtmultimedia
-        kdePackages.qtvirtualkeyboard
-
       ];
       wayland.enable = true;
-      theme = "sddm-stray";
-      settings = {
-        Theme = {
-          CursorTheme = "LyraS-cursors";
-        };
-      };
+      theme = "sddm-stray"; 
     };
 }
 ```

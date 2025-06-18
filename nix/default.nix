@@ -22,7 +22,6 @@ stdenvNoCC.mkDerivation rec {
   propagatedBuildInputs = [
     kdePackages.qtsvg
     kdePackages.qtmultimedia
-    kdePackages.qtvirtualkeyboard
   ];
 
   buildPhase = ''
@@ -38,12 +37,7 @@ stdenvNoCC.mkDerivation rec {
     install -dm755 "$themeDir"
 
     cp -r "$src/theme/"* "$themeDir"
-
-    if [ -d "$themeDir/fonts" ]; then
-      install -dm755 "$out/share/fonts"
-      cp -r "$themeDir/fonts/"* "$out/share/fonts"
-    fi
-
+ 
     runHook postInstall
   '';
 
@@ -51,12 +45,11 @@ stdenvNoCC.mkDerivation rec {
     mkdir -p $out/nix-support
     echo ${kdePackages.qtsvg} >> $out/nix-support/propagated-user-env-packages
     echo ${kdePackages.qtmultimedia} >> $out/nix-support/propagated-user-env-packages
-    echo ${kdePackages.qtvirtualkeyboard} >> $out/nix-support/propagated-user-env-packages
   '';
 
   meta = with lib; {
-    description = "Stray SDDM theme from maotseantonio/sddm-stray-flakes";
-    homepage = "https://github.com/maotseantonio/sddm-stray-flakes";
+    description = "Stray SDDM theme from Bqrry4/sddm-stray";
+    homepage = "https://github.com/Bqrry/sddm-stray";
     license = licenses.gpl3Plus;
     platforms = platforms.linux;
   };
