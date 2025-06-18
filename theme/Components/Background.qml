@@ -34,7 +34,7 @@ Rectangle {
     VideoOutput {
         id: videoOutput
 
-        fillMode: VideoOutput.PreserveAspectCrop
+        fillMode: VideoOutput.PreserveAspectFit
         anchors.fill: parent
     }
 

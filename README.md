@@ -47,9 +47,9 @@ This theme is keyboard oriented, with the following mappings.
 
 Basic customization can be done by modifying [```theme.conf```](./theme/theme.conf).
 
-> [!IMPORTANT]  
-> Only the sessions listed in [`Components/sessions.js`](./theme/Components/sessions.js) will be shown.  
-> One can use [`extra/ls_sessions.sh`](./extra/ls_sessions.sh) to check the existing sessions with their specific names.
+> [!NOTE]  
+> To set an icon and alias for a session, refer to [`Components/sessions.js`](./theme/Components/sessions.js).  
+> One can use [`extra/ls_sessions.sh`](./extra/ls_sessions.sh) to list the existing sessions along with their specific names.
 
 ## Modding
 
