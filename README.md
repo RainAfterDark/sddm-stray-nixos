@@ -31,6 +31,39 @@ Current=stray
 #...
 ```
 
+Add to `inputs` in `flake.nix`:
+
+```nix
+sddm-stray.url = "github:Bqrry4/sddm-stray";
+```
+
+### Edit DisplayManager Configuration
+
+Usage with a minimal system flake:
+
+```nix
+
+{
+
+  environment.systemPackages = [ 
+      inputs.sddm-stray.packages.${pkgs.system}.default
+    ]; 
+
+ 
+   services.displayManager.sddm = {
+      enable = true; # Enable SDDM.
+      package = pkgs.kdePackages.sddm;
+      extraPackages = with pkgs; [
+        kdePackages.qtsvg
+        kdePackages.qtmultimedia
+      ];
+      wayland.enable = true;
+      theme = "sddm-stray"; 
+    };
+}
+```
+
+
 # Usage
 
 This theme is keyboard oriented, with the following mappings.
