@@ -1,25 +1,32 @@
-
 {
-  description = "Your system config";
+  description = "Modded SDDM Stray Flake for NixOS";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    { nixpkgs, flake-utils, ... }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = import nixpkgs {
           inherit system;
         };
 
         sddm-stray = pkgs.callPackage ./nix {
-          inherit (pkgs) lib stdenvNoCC fetchFromGitHub formats;
+          inherit (pkgs)
+            lib
+            stdenvNoCC
+            fetchFromGitHub
+            ;
           kdePackages = pkgs.kdePackages;
-         };
+        };
 
-      in {
+      in
+      {
         packages.default = sddm-stray;
-      });
+      }
+    );
 }

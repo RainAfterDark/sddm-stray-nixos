@@ -6,9 +6,11 @@ var sessionIcons = {
     "Plasma (Wayland)": {
         icon: "../icons/kde.svg",
         alias: "Plasma",
-    }, 
+    },
     "Hyprland": {
         icon: "../icons/hyprland.svg"
     },
-    "Niri": {}
+    "Niri": {
+        // TODO when Niri gets an official logo
+    }
 }

@@ -58,11 +58,27 @@ Usage with a minimal system flake:
         kdePackages.qtmultimedia
       ];
       wayland.enable = true;
-      theme = "sddm-stray"; 
+      theme = "sddm-stray-nixos"; 
     };
 }
 ```
 
+### Updating (for development)
+
+At least for NixOS, updating the theme requires clearing SDDM's cache and rebooting.
+You can do so with `sudo rm -rf /var/lib/sddm/.cache`, or adding a systemd service that clears the cache before SDDM starts with:
+
+```nix
+{
+  environment.systemPackages = [ 
+      pkgs.coreutlis
+  ];
+
+  systemd.services.sddm.serviceConfig.ExecStartPre = lib.mkAfter [
+      "${pkgs.coreutils}/bin/rm -rf /var/lib/sddm/.cache"
+  ];
+}
+```
 
 # Usage
 

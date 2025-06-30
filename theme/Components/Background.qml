@@ -5,7 +5,7 @@ import "timestamps.js" as Timestamps
 Rectangle {
     id: background
 
-    property string mediaPath: "../background/stray.mp4"
+    property string mediaPath: "../background/stray-nixos.mp4"
     property var timestamps: Timestamps.timestamps
     property alias position: mediaplayer.position
 
