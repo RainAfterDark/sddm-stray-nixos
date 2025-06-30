@@ -15,7 +15,7 @@
           inherit system;
         };
 
-        sddm-stray = pkgs.callPackage ./nix {
+        sddm-stray-nixos = pkgs.callPackage ./nix {
           inherit (pkgs)
             lib
             stdenvNoCC
@@ -26,7 +26,7 @@
 
       in
       {
-        packages.default = sddm-stray;
+        packages.default = sddm-stray-nixos;
       }
     );
 }

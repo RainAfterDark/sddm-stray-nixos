@@ -49,7 +49,7 @@ stdenvNoCC.mkDerivation {
 
   meta = with lib; {
     description = "NixOS modded Stray SDDM theme from Bqrry4/sddm-stray";
-    homepage = "https://github.com/Bqrry/sddm-stray";
+    homepage = "https://github.com/RainAfterDark/sddm-stray-nixos";
     license = licenses.gpl3Plus;
     platforms = platforms.linux;
   };

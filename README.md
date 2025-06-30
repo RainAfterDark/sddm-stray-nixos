@@ -20,7 +20,7 @@
 ### Copy from repo into ```sddm/themes```
 
 ```bash
-git clone --depth 1 https://github.com/Bqrry4/sddm-stray.git && cd sddm-stray
+git clone --depth 1 https://github.com/RainAfterDark/sddm-stray-nixos.git && cd sddm-stray-nixos
 sudo cp -r theme/ /usr/share/sddm/themes/stray
 ```
 
@@ -37,7 +37,7 @@ Current=stray
 Add to `inputs` in `flake.nix`:
 
 ```nix
-sddm-stray.url = "github:Bqrry4/sddm-stray";
+sddm-stray-nixos.url = "github:RainAfterDark/sddm-stray-nixos";
 ```
 
 ### Edit DisplayManager Configuration
@@ -47,7 +47,7 @@ Usage with a minimal system flake:
 ```nix
 {
   environment.systemPackages = [ 
-      inputs.sddm-stray.packages.${pkgs.system}.default
+      inputs.sddm-stray-nixos.packages.${pkgs.system}.default
   ]; 
  
    services.displayManager.sddm = {
