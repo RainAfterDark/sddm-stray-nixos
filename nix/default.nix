@@ -9,12 +9,11 @@ stdenvNoCC.mkDerivation {
   pname = "sddm-stray-nixos";
   version = "1.0";
 
-  ## TODO point this to the correct repo and commit later
   src = fetchFromGitHub {
-    owner = "Bqrry4";
-    repo = "sddm-stray";
-    rev = "299b6d6473fa1880ae94b12233f9233b0e4dbf02";
-    hash = "sha256-g/K0Ep0NkSDl4SdGHoqqZydGR6F8GoqYggz37rp8Oc8=";
+    owner = "RainAfterDark";
+    repo = "sddm-stray-nixos";
+    rev = "bd10417e62105cea7735f3908aeac1f72ff0607b";
+    hash = "sha256-Bp/WswEMTC6H8eJgrxZnc5Z0F75b9f746v3bqw132u4=";
   };
 
   dontWrapQtApps = true;
