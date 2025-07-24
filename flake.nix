@@ -19,7 +19,6 @@
           inherit (pkgs)
             lib
             stdenvNoCC
-            fetchFromGitHub
             ;
           kdePackages = pkgs.kdePackages;
         };

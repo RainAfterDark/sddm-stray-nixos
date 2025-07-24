@@ -1,7 +1,6 @@
 {
   lib,
   stdenvNoCC,
-  fetchFromGitHub,
   kdePackages,
 }:
 
@@ -9,13 +8,8 @@ stdenvNoCC.mkDerivation {
   pname = "sddm-stray-nixos";
   version = "1.0";
 
-  src = fetchFromGitHub {
-    owner = "RainAfterDark";
-    repo = "sddm-stray-nixos";
-    rev = "bd10417e62105cea7735f3908aeac1f72ff0607b";
-    hash = "sha256-Bp/WswEMTC6H8eJgrxZnc5Z0F75b9f746v3bqw132u4=";
-  };
-
+  src = ../.;
+  dontUnpack = true;
   dontWrapQtApps = true;
 
   propagatedBuildInputs = [
